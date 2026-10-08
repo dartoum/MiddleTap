@@ -275,9 +275,24 @@ func installClickTap() {
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     var item: NSStatusItem!
 
+    // Magic Mouse outline with a dot in the center (template: macOS tints it for light/dark).
+    static func menuBarIcon() -> NSImage {
+        let img = NSImage(size: NSSize(width: 18, height: 18), flipped: false) { _ in
+            NSColor.black.setStroke(); NSColor.black.setFill()
+            let body = NSBezierPath(roundedRect: NSRect(x: 4.5, y: 1.5, width: 9, height: 15), xRadius: 4.5, yRadius: 4.5)
+            body.lineWidth = 1.5
+            body.stroke()
+            NSBezierPath(ovalIn: NSRect(x: 7, y: 7, width: 4, height: 4)).fill()
+            return true
+        }
+        img.isTemplate = true
+        img.accessibilityDescription = "MiddleTap"
+        return img
+    }
+
     func applicationDidFinishLaunching(_ n: Notification) {
         item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        item.button?.image = NSImage(systemSymbolName: "magicmouse", accessibilityDescription: "MiddleTap")
+        item.button?.image = Self.menuBarIcon()
         let menu = NSMenu()
         menu.delegate = self
         item.menu = menu
