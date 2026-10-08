@@ -277,7 +277,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     func applicationDidFinishLaunching(_ n: Notification) {
         item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        item.button?.image = NSImage(systemSymbolName: "computermouse", accessibilityDescription: "MiddleTap")
+        item.button?.image = NSImage(systemSymbolName: "magicmouse", accessibilityDescription: "MiddleTap")
         let menu = NSMenu()
         menu.delegate = self
         item.menu = menu
