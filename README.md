@@ -11,7 +11,7 @@ A tiny macOS menu bar app that turns a **Magic Mouse** (or trackpad) gesture int
 
 ## Install
 
-1. Download `MiddleTap-1.0.0.zip` from the [latest release](https://github.com/dartoum/MiddleTap/releases/latest) and unzip it.
+1. Download `MiddleTap-1.0.1.zip` from the [latest release](https://github.com/dartoum/MiddleTap/releases/latest) and unzip it.
 2. Move `MiddleTap.app` to `/Applications`.
 3. The app is signed with a self-signed certificate and not notarized, so macOS blocks the first launch. Right-click the app, choose **Open**, then **Open** again (or allow it under *System Settings > Privacy & Security*).
 4. Grant **Accessibility** access when asked (*System Settings > Privacy & Security > Accessibility*). Without it MiddleTap cannot send the middle click.
